@@ -3,169 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beslenme Koçu & Wellness Rehberi</title>
+    <title>Wellness Rehberi | Ayşegül Uysal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        .gradient-text { background: linear-gradient(90deg, #4ade80, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-bg { background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; }
         
-        .card-float { animation: float 3s ease-in-out infinite; }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
         }
 
-        .tarti-glow { box-shadow: 0 0 20px rgba(74, 222, 128, 0.2); }
+        .floating-card {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .scale-svg-container:hover svg {
+            transform: scale(1.05) rotate(1deg);
+            transition: all 0.4s ease;
+        }
+
         section { scroll-margin-top: 80px; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-900">
 
-    <!-- Navigasyon -->
-    <nav class="fixed w-full z-[100] bg-white/90 backdrop-blur-md shadow-sm border-b border-green-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white">
+    <!-- Navigasyon Çubuğu -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-green-200">
                     <i class="fas fa-leaf"></i>
                 </div>
-                <span class="font-bold text-xl tracking-tight uppercase">Wellness <span class="text-green-600">Rehberi</span></span>
+                <span class="font-bold text-xl tracking-tighter italic">WELLNESS <span class="text-green-600">REHBERİ</span></span>
             </div>
-            <div class="hidden md:flex space-x-6 font-medium text-sm">
-                <a href="#vki" class="hover:text-green-600 transition">VKİ Hesapla</a>
-                <a href="#tarti" class="hover:text-green-600 transition font-bold text-green-600">Hediye Tartı</a>
-                <a href="#kategoriler" class="hover:text-green-600 transition">Ürün Grupları</a>
-                <a href="https://wa.me/905435322497" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition shadow-md">Koçluk Al</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#vki" class="text-sm font-semibold hover:text-green-600 transition">VKİ Hesapla</a>
+                <a href="#kampanya" class="text-sm font-semibold hover:text-green-600 transition">Hediye Tartı</a>
+                <a href="#urunler" class="text-sm font-semibold hover:text-green-600 transition">Ürün Grupları</a>
+                <a href="https://instagram.com/guluysall24" target="_blank" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition shadow-md">
+                    Koçluk Al
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Bölümü -->
-    <section class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-black/40"></div>
-        
-        <!-- SAĞ ÜST Kartvizit -->
-        <div class="absolute top-32 right-6 z-10 hidden lg:block card-float">
-            <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-2xl w-72 text-right">
-                <div class="flex items-center justify-end space-x-4 mb-4">
-                    <div class="text-right">
-                        <h4 class="text-white font-bold text-lg leading-tight">Ayşegül UYSAL</h4>
-                        <p class="text-green-400 text-xs font-semibold uppercase tracking-wider">Wellness Coach</p>
-                    </div>
-                    <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-green-400 shadow-lg">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" alt="Wellness Coach" class="w-full h-full object-cover">
-                    </div>
+    <!-- Hero Alanı -->
+    <header class="hero-section min-h-screen flex items-center relative pt-20 px-4">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
+            
+            <!-- Yazı Alanı -->
+            <div class="text-white z-10">
+                <span class="inline-block px-4 py-1 bg-green-500 rounded-full text-xs font-bold uppercase tracking-widest mb-4">Ayşegül Uysal ile Değişime Başla</span>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 italic">Hayallerindeki <br><span class="text-green-400">Vücuda Kavuş!</span></h1>
+                <p class="text-lg text-slate-200 mb-8 max-w-lg">Aç kalmadan, enerjini kaybetmeden ve profesyonel rehberlik eşliğinde hedefine ulaşmak artık çok kolay.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="bg-white text-green-700 px-8 py-4 rounded-2xl font-bold hover:bg-slate-100 transition shadow-xl">Hemen Bilgi Al</a>
+                    <a href="#vki" class="glass-effect px-8 py-4 rounded-2xl font-bold hover:bg-white/20 transition">Ücretsiz Analiz Yap</a>
                 </div>
-                <div class="space-y-3 text-sm text-gray-200">
-                    <div class="flex items-center justify-end space-x-3">
-                        <span>Bağımsız Distribütör</span>
-                        <i class="fas fa-check-circle text-green-400"></i>
+            </div>
+
+            <!-- Sağ Taraf: Kartvizit -->
+            <div class="hidden lg:flex justify-center">
+                <div class="floating-card glass-effect p-8 rounded-[2.5rem] w-80 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4">
+                        <i class="fas fa-certificate text-green-400 opacity-50 text-4xl"></i>
                     </div>
-                    <div class="flex items-center justify-end space-x-3">
-                        <span>+90 543 532 24 97</span>
-                        <i class="fab fa-whatsapp text-green-400"></i>
+                    <div class="w-24 h-24 rounded-full border-4 border-green-500 mx-auto mb-4 p-1">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" alt="Koç" class="w-full h-full object-cover rounded-full">
                     </div>
-                </div>
-                <div class="mt-5 pt-4 border-t border-white/10 flex justify-around">
-                    <a href="https://instagram.com/guluysall24" target="_blank" class="text-white hover:text-green-400 transition"><i class="fab fa-instagram fa-lg"></i></a>
-                    <!-- Facebook Adresi Eklendi -->
-                    <a href="https://facebook.com/guluysall24" target="_blank" class="text-white hover:text-green-400 transition"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="mailto:guluysal@gmail.com" class="text-white hover:text-green-400 transition"><i class="fas fa-envelope fa-lg"></i></a>
+                    <h3 class="text-white font-bold text-xl italic">Ayşegül Uysal</h3>
+                    <p class="text-green-400 text-xs font-bold uppercase mb-6">Bağımsız Wellness Koçu</p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between text-sm text-slate-300">
+                            <span>Instagram</span>
+                            <a href="https://instagram.com/guluysall24" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-slate-300">
+                            <span>WhatsApp</span>
+                            <a href="https://wa.me/905435322497" target="_blank" class="text-white hover:text-green-400"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-green-600 rounded-xl text-white font-bold text-sm hover:bg-green-700 transition">TAKİP ET</a>
                 </div>
             </div>
         </div>
+    </header>
 
-        <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="text-white md:pl-20">
-                <span class="bg-green-600 text-white px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block tracking-widest uppercase">Kişiye Özel Danışmanlık</span>
-                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 italic">Değişim Senin <br><span class="text-green-400 underline">Elinde!</span></h1>
-                <p class="text-lg mb-8 text-gray-200 font-light">Kardeşçe bir rehberlikle, aç kalmadan ve enerjini kaybetmeden hedefine ulaşman için buradayım.</p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#kategoriler" class="bg-green-500 text-center text-white px-8 py-4 rounded-xl font-bold hover:bg-green-600 transition shadow-xl">Ürünleri İncele</a>
-                    <a href="#vki" class="bg-white/10 backdrop-blur-md text-center text-white border border-white/30 px-8 py-4 rounded-xl font-bold hover:bg-white/20 transition">VKİ Hesapla</a>
+    <!-- VKİ Hesaplama -->
+    <section id="vki" class="py-24 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-[3rem] shadow-2xl shadow-slate-200 overflow-hidden border border-slate-100">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-10 lg:p-14 bg-green-600 text-white">
+                        <h2 class="text-3xl font-bold mb-6 italic underline decoration-white/30">Ücretsiz Vücut Analiz Testi</h2>
+                        <p class="mb-8 text-green-50 font-light">Mevcut durumunu öğrenmek, hedefe giden yoldaki ilk adımdır. Bilgilerini gir ve sonucu hemen gör.</p>
+                        <div class="space-y-4">
+                            <input type="number" id="kilo" placeholder="Kilonuz (kg)" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 placeholder:text-white/50 focus:bg-white/20 outline-none transition">
+                            <input type="number" id="boy" placeholder="Boyunuz (cm)" class="w-full p-4 rounded-xl bg-white/10 border border-white/20 placeholder:text-white/50 focus:bg-white/20 outline-none transition">
+                            <button onclick="calc()" class="w-full bg-white text-green-700 p-4 rounded-xl font-bold hover:bg-slate-100 transition shadow-lg">Analiz Et</button>
+                        </div>
+                    </div>
+                    <div class="p-10 lg:p-14 flex flex-col justify-center items-center text-center bg-slate-50" id="vki-wrap">
+                        <div id="vki-placeholder" class="text-slate-300">
+                            <i class="fas fa-heartbeat text-6xl mb-4 opacity-20"></i>
+                            <p class="italic text-sm">Hesaplama butonuna bastığınızda sonuç burada görüntülenecektir.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- VKİ Hesaplayıcı -->
-    <section id="vki" class="py-24 px-6 bg-white">
-        <div class="max-w-4xl mx-auto bg-green-50 rounded-[3rem] p-8 md:p-12 shadow-inner border border-green-100">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4 text-gray-900 font-serif">Vücut Analiz Testi</h2>
-                <p class="text-gray-600 italic">İhtiyacın olan programı belirlemek için değerlerini gir.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-4">
-                    <input type="number" id="vki-kilo" placeholder="Kilonuz (kg)" class="w-full p-4 rounded-xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-green-500 outline-none">
-                    <input type="number" id="vki-boy" placeholder="Boyunuz (cm)" class="w-full p-4 rounded-xl border-none ring-1 ring-gray-200 focus:ring-2 focus:ring-green-500 outline-none">
-                    <button onclick="calculateBMI()" class="w-full bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition">Sonucu Gör</button>
-                </div>
-                <div id="vki-sonuc" class="bg-white rounded-3xl p-6 flex flex-col justify-center items-center text-center border border-green-100 shadow-sm min-h-[200px]">
-                    <i class="fas fa-chart-bar text-4xl text-green-200 mb-4"></i>
-                    <p class="text-gray-400 italic text-sm">Verileri girdiğinde analizin burada görünecek.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AKILLI TARTI REKLAM ALANI -->
-    <section id="tarti" class="py-20 px-6 bg-gradient-to-br from-white to-green-50 overflow-hidden">
+    <!-- Hediye Tartı Bölümü -->
+    <section id="kampanya" class="py-20 px-4 bg-slate-100/50">
         <div class="max-w-6xl mx-auto">
-            <div class="bg-white rounded-[3rem] shadow-2xl border border-green-100 overflow-hidden grid md:grid-cols-12 gap-0">
-                <!-- Sol: Tartı Tanıtımı -->
-                <div class="md:col-span-7 p-10 lg:p-16">
-                    <div class="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-xs font-bold mb-6 tracking-widest uppercase">Kaçırılmayacak Fırsat</div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4 leading-tight italic">WIAMI Akıllı Yağ Ölçer <br><span class="text-green-600 underline">Bluetooth Tartı</span></h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">Sadece kilonuzu değil; vücut yağ oranınızı, kas kütlenizi, su oranınızı ve kemik yoğunluğunuzu anlık olarak telefonunuzdan takip edin.</p>
+            <div class="bg-white rounded-[3.5rem] overflow-hidden shadow-xl flex flex-col lg:flex-row items-stretch">
+                <!-- Sol: İçerik -->
+                <div class="lg:w-3/5 p-12 lg:p-20">
+                    <span class="text-orange-500 font-bold text-xs uppercase tracking-[0.2em] mb-4 inline-block italic">Ayın Fırsatı</span>
+                    <h2 class="text-4xl lg:text-5xl font-black text-slate-900 mb-6 italic leading-tight uppercase">WIAMI Bluetooth <br><span class="text-green-600">Akıllı Tartı Hediye!</span></h2>
+                    <p class="text-slate-600 mb-8 text-lg font-light leading-relaxed">
+                        Sadece kilo değil; yağ, kas, su oranı ve metabolizma yaşı gibi 12 farklı veriyi telefonunuzdan anlık takip edin.
+                    </p>
                     
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center space-x-3 text-sm text-gray-700 font-medium">
-                            <i class="fas fa-mobile-alt text-blue-500 text-xl"></i>
-                            <span>Bluetooth Uygulama</span>
+                    <div class="flex items-center gap-4 p-6 bg-green-50 rounded-2xl border border-green-100 mb-10">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">
+                            <i class="fas fa-gift"></i>
                         </div>
-                        <div class="flex items-center space-x-3 text-sm text-gray-700 font-medium">
-                            <i class="fas fa-microchip text-green-500 text-xl"></i>
-                            <span>12 Farklı Veri Analizi</span>
+                        <div>
+                            <p class="font-bold text-green-800 italic">5.000 TL ve Üzeri Alışverişlerde</p>
+                            <p class="text-sm text-green-600">Tamamen Bedelsiz Sizin Olabilir!</p>
                         </div>
                     </div>
 
-                    <div class="bg-green-600 p-6 rounded-2xl text-white tarti-glow">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-white text-green-600 w-12 h-12 rounded-full flex items-center justify-center text-2xl shrink-0 shadow-lg">
-                                <i class="fas fa-gift"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg leading-tight italic">KAMPANYA: ŞİMDİ HEDİYE!</h4>
-                                <p class="text-green-100 text-sm">5.000 TL ve üzeri program alışverişlerinde bu akıllı tartı bizden size hediye!</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 flex items-center gap-4">
-                        <a href="https://wa.me/905435322497?text=Akıllı tartı hediyeli kampanya hakkında bilgi alabilir miyim?" class="bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition shadow-lg text-center flex-1 md:flex-none">Bilgi Al & Sipariş Ver</a>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://instagram.com/guluysall24" target="_blank" class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold text-center hover:bg-black transition">Kampanya İçin Yaz</a>
+                        <p class="text-xs text-slate-400 flex items-center gap-2 italic">
+                            <i class="fas fa-info-circle"></i> Stoklarla sınırlıdır.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Sağ: Tartı Görseli (Temsili Modern İlüstrasyon/Placeholder) -->
-                <div class="md:col-span-5 bg-green-500 relative flex items-center justify-center p-12">
-                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="w-64 h-64 bg-white rounded-3xl shadow-2xl flex items-center justify-center transform rotate-6 hover:rotate-0 transition duration-500">
-                             <!-- Temsili Tartı İkonu/Görseli -->
-                             <div class="text-center p-8">
-                                <i class="fas fa-weight-hanging text-6xl text-gray-200 mb-2"></i>
-                                <div class="text-green-500 font-bold text-2xl">72.4</div>
-                                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">WIAMI SMART</div>
-                             </div>
-                        </div>
-                        <div class="mt-8">
-                             <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full text-white text-sm font-bold border border-white/30">
-                                Stoklarla Sınırlıdır!
-                             </div>
+                <!-- Sağ: Görsel (Kodla Hazırlanan Tartı) -->
+                <div class="lg:w-2/5 bg-green-600 flex flex-col items-center justify-center p-12 relative overflow-hidden">
+                    <div class="absolute inset-0 opacity-10">
+                        <svg width="100%" height="100%"><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+                    </div>
+                    
+                    <div class="relative scale-svg-container">
+                        <!-- Dijital Tartı SVG -->
+                        <svg width="280" height="280" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="50" y="50" width="300" height="300" rx="40" fill="white" />
+                            <rect x="130" y="80" width="140" height="60" rx="10" fill="#1e293b" />
+                            <text x="200" y="125" font-family="monospace" font-size="34" fill="#10b981" text-anchor="middle" font-weight="bold">65.2<tspan font-size="16">kg</tspan></text>
+                            
+                            <circle cx="110" cy="200" r="35" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" />
+                            <circle cx="290" cy="200" r="35" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" />
+                            <circle cx="110" cy="300" r="35" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" />
+                            <circle cx="290" cy="300" r="35" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" />
+                            
+                            <text x="200" y="340" font-family="sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle" letter-spacing="3" font-weight="bold">WIAMI SMART</text>
+                            <path d="M100 50H300C330 50 350 70 350 100V140L50 140V100C50 70 70 50 100 50Z" fill="white" fill-opacity="0.4" />
+                        </svg>
+                        
+                        <div class="mt-8 text-center text-white">
+                            <div class="bg-white/20 px-6 py-2 rounded-full border border-white/30 text-xs font-bold uppercase tracking-widest inline-block">
+                                <i class="fab fa-bluetooth mr-2"></i> APP DESTEKLİ
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,123 +195,83 @@
     </section>
 
     <!-- Ürün Kategorileri -->
-    <section id="kategoriler" class="py-24 px-6 bg-gray-50">
+    <section id="urunler" class="py-24 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4 italic text-gray-900 underline decoration-green-500 underline-offset-8">Wellness Kataloğu</h2>
-                <p class="text-gray-500">Hedefine göre kategorize edilmiş uzman çözümleri.</p>
+                <h2 class="text-4xl font-bold italic mb-4">Ürün Kategorileri</h2>
+                <div class="w-24 h-1.5 bg-green-500 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- 1. Kilo Kontrol Setleri -->
-                <div class="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-xl transition border border-gray-100 flex flex-col justify-between">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- Paket 1 -->
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fas fa-weight"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Kilo Kontrol Setleri</h3>
+                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-apple-alt"></i>
                         </div>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Aç kalmadan kilo yönetimi için formüle edilmiş, shake ve bitkisel çay odaklı temel programlar.</p>
-                        <ul class="space-y-3 mb-8 text-sm">
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Başlangıç & İleri Seviye Paketler</li>
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Öğün Yerine Geçen Shake Serisi</li>
-                        </ul>
+                        <h3 class="text-2xl font-bold mb-4 italic">Kilo Kontrol Programları</h3>
+                        <p class="text-slate-500 italic mb-8">Kişiselleştirilmiş öğün planları ve besin destekleriyle ideal kilonuza güvenle ulaşın.</p>
                     </div>
-                    <a href="https://wa.me/905435322497?text=KiloKontrolSetleriBilgi" class="bg-green-600 text-white py-4 rounded-xl text-center font-bold hover:bg-green-700 transition">Paketleri İncele</a>
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="w-full py-4 bg-green-600 text-white rounded-xl font-bold text-center hover:bg-green-700 transition">Instagram'da İncele</a>
                 </div>
 
-                <!-- 2. Ara Öğünler & Protein -->
-                <div class="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-xl transition border border-gray-100 flex flex-col justify-between">
+                <!-- Paket 2 -->
+                <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 flex flex-col justify-between">
                     <div>
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fas fa-apple-alt"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Sağlıklı Ara Öğünler</h3>
+                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                            <i class="fas fa-cookie-bite"></i>
                         </div>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Tatlı krizlerine son veren, yüksek proteinli ve düşük kalorili atıştırmalık çözümleri.</p>
+                        <h3 class="text-2xl font-bold mb-4 italic">Ara Öğün ve Atıştırmalıklar</h3>
+                        <p class="text-slate-500 italic mb-8">Tatlı krizlerine sağlıklı, proteinli ve düşük kalorili pratik çözümler burada.</p>
                     </div>
-                    <a href="https://wa.me/905435322497?text=AraOgunlerBilgi" class="bg-blue-600 text-white py-4 rounded-xl text-center font-bold hover:bg-blue-700 transition">Lezzetleri Keşfet</a>
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="w-full py-4 bg-blue-600 text-white rounded-xl font-bold text-center hover:bg-blue-700 transition">Detaylı Bilgi Al</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Neden Ben? (Hizmetler) -->
-    <section id="hizmetler" class="bg-gray-900 py-24 text-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 items-center gap-16">
-            <div>
-                <h2 class="text-4xl font-bold mb-8 italic tracking-tight">Kardeşçe <span class="text-green-500">Rehberlik.</span></h2>
-                <div class="space-y-8">
-                    <div class="flex gap-6">
-                        <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0 border border-green-500/30"><i class="fas fa-user-friends"></i></div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-2 text-white">Samimi Destek</h4>
-                            <p class="text-gray-400 text-sm">Sadece bir müşteri değil, yol arkadaşımsın. Her adımında yanındayım.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6">
-                        <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/30"><i class="fas fa-clipboard-list"></i></div>
-                        <div>
-                            <h4 class="text-xl font-semibold mb-2 text-white">Kişisel Planlama</h4>
-                            <p class="text-gray-400 text-sm">Senin sevdiğin tatlara ve yaşam tarzına uygun bir beslenme düzeni kurarız.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="relative">
-                <div class="absolute -inset-4 bg-green-500/20 blur-3xl rounded-full"></div>
-                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800" alt="Success" class="relative rounded-[2.5rem] shadow-2xl border border-white/10 grayscale-[30%] hover:grayscale-0 transition duration-500">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white py-16 px-6 border-t border-gray-100">
+    <footer class="bg-slate-900 text-white py-16 px-4">
         <div class="max-w-7xl mx-auto text-center">
-            <div class="flex items-center justify-center space-x-2 mb-6">
-                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <span class="font-bold text-lg italic uppercase text-gray-900 tracking-tight">Ayşegül UYSAL [Beslenme Koçu]</span>
+            <div class="mb-10">
+                <h4 class="text-2xl font-bold italic mb-2 tracking-widest">AYŞEGÜL UYSAL</h4>
+                <p class="text-green-500 text-sm font-semibold uppercase tracking-[0.3em]">Wellness & Nutrition Coach</p>
             </div>
-            <p class="text-gray-400 text-[10px] max-w-xl mx-auto mb-8 uppercase tracking-[0.2em] font-semibold italic">
-                Bağımsız Herbalife Distribütörü. Bu site tıbbi tavsiye yerine geçmez.
-            </p>
-            <div class="flex justify-center space-x-6 text-gray-400">
-                <a href="https://instagram.com/guluysall24" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram fa-2x"></i></a>
-                <!-- Facebook Footer Eklendi -->
-                <a href="https://facebook.com/guluysall24" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="https://wa.me/905435322497" class="hover:text-green-500 transition"><i class="fab fa-whatsapp fa-2x"></i></a>
+            
+            <div class="flex justify-center gap-8 mb-12">
+                <a href="https://instagram.com/guluysall24" target="_blank" class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/guluysall24" target="_blank" class="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center hover:bg-white/10 transition text-2xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/905435322497" target="_blank" class="w-14 h-14 bg-green-600/20 text-green-500 rounded-full flex items-center justify-center hover:bg-green-600/30 transition text-2xl"><i class="fab fa-whatsapp"></i></a>
             </div>
+
+            <p class="text-slate-500 text-[10px] uppercase tracking-widest font-bold">Herbalife Bağımsız Distribütörü • © 2024 Wellness Rehberi</p>
         </div>
     </footer>
 
     <script>
-        function calculateBMI() {
-            const kilo = parseFloat(document.getElementById('vki-kilo').value);
-            const boy = parseFloat(document.getElementById('vki-boy').value) / 100;
-            const resultDiv = document.getElementById('vki-sonuc');
+        function calc() {
+            const k = document.getElementById('kilo').value;
+            const b = document.getElementById('boy').value / 100;
+            const wrap = document.getElementById('vki-wrap');
 
-            if (kilo > 0 && boy > 0) {
-                const bmi = (kilo / (boy * boy)).toFixed(1);
-                let durum = "";
+            if (k > 0 && b > 0) {
+                const bmi = (k / (b * b)).toFixed(1);
+                let text = "";
                 let color = "";
 
-                if (bmi < 18.5) { durum = "Zayıf - Kilo Alma Paketi Uygundur"; color = "text-blue-500"; }
-                else if (bmi < 25) { durum = "Harika - Formunu Koruyalım"; color = "text-green-500"; }
-                else if (bmi < 30) { durum = "Fazla Kilolu - Kontrol Zamanı"; color = "text-orange-500"; }
-                else { durum = "Obez - Acil Program Desteği"; color = "text-red-500"; }
+                if (bmi < 18.5) { text = "Kilo Alma Odaklı Program Gerekebilir"; color = "text-blue-500"; }
+                else if (bmi < 25) { text = "Tebrikler, İdeal Kilodasınız!"; color = "text-green-500"; }
+                else if (bmi < 30) { text = "Hafif Fazla Kilolu - Sıkılaşma Vakti"; color = "text-orange-500"; }
+                else { text = "Profesyonel Destek Önerilir"; color = "text-red-500"; }
 
-                resultDiv.innerHTML = `
-                    <h4 class="text-gray-400 text-[10px] font-bold uppercase mb-1 tracking-widest">Analiz Tamamlandı</h4>
-                    <span class="text-6xl font-bold ${color}">${bmi}</span>
-                    <p class="mt-4 font-bold text-gray-800 text-sm">${durum}</p>
-                    <a href="https://wa.me/905435322497?text=VKİ sonucum ${bmi} çıktı, program desteği istiyorum" class="mt-6 inline-block bg-green-600 text-white px-6 py-2 rounded-lg text-xs font-bold hover:bg-green-700 transition">Ücretsiz Program Danışmanlığı &rarr;</a>
+                wrap.innerHTML = `
+                    <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">Vücut Kitle Endeksiniz</p>
+                    <h3 class="text-7xl font-black ${color} mb-6 tracking-tighter">${bmi}</h3>
+                    <p class="text-slate-700 font-bold mb-8 italic">${text}</p>
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-slate-900 text-white px-8 py-3 rounded-xl font-bold text-sm hover:scale-105 transition">Analiz Almak İçin Yaz &rarr;</a>
                 `;
             } else {
-                resultDiv.innerHTML = `<p class="text-red-500 text-sm italic font-bold">Lütfen değerleri doğru girin!</p>`;
+                alert("Lütfen bilgileri tam doldurun!");
             }
         }
     </script>
