@@ -52,6 +52,14 @@
             scroll-margin-top: 80px; 
             width: 100%;
         }
+
+        /* Öncesi Sonrası Özel Stilleri */
+        .transformation-card {
+            transition: all 0.4s ease;
+        }
+        .transformation-card:hover {
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -71,6 +79,7 @@
             
             <div class="hidden lg:flex items-center gap-6">
                 <a href="#hikayem" class="text-sm font-semibold hover:text-green-600 transition">Hikayem</a>
+                <a href="#donusumler" class="text-sm font-semibold hover:text-green-600 transition">Dönüşümler</a>
                 <a href="#vki" class="text-sm font-semibold hover:text-green-600 transition">VKİ Hesapla</a>
                 <a href="#kampanya" class="text-sm font-semibold hover:text-green-600 transition">Hediye</a>
                 <a href="https://instagram.com/guluysall24" target="_blank" class="bg-green-600 text-white px-5 py-2 rounded-full font-bold hover:bg-green-700 transition shadow-md">Koçluk Al</a>
@@ -164,6 +173,65 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖNCESİ / SONRASI BÖLÜMÜ -->
+    <section id="donusumler" class="py-24 px-4 bg-slate-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-bold text-sm uppercase tracking-widest mb-4 inline-block italic">Başarı Hikayeleri</span>
+                <h2 class="text-4xl lg:text-5xl font-black italic uppercase leading-tight">Değişimi <span class="text-green-600">Gözlerinle</span> Gör</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Sadece kilo vermiyoruz; yeni bir yaşam tarzı inşa ediyoruz. İşte senin gibi yola çıkanların sonuçları.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Dönüşüm 1 -->
+                <div class="transformation-card bg-white rounded-[2rem] p-4 shadow-xl border border-slate-200">
+                    <div class="ba-image-container mb-6 h-80">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600" alt="Dönüşüm 1" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-slate-900 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Öncesi</div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Sonrası</div>
+                    </div>
+                    <div class="text-center pb-4">
+                        <h4 class="font-bold text-xl mb-1 uppercase italic">Merve H.</h4>
+                        <p class="text-green-600 font-black text-2xl">-18 KG</p>
+                        <p class="text-slate-400 text-xs uppercase mt-2 font-bold tracking-tighter">"Enerjim Yerine Geldi"</p>
+                    </div>
+                </div>
+
+                <!-- Dönüşüm 2 -->
+                <div class="transformation-card bg-white rounded-[2rem] p-4 shadow-xl border border-slate-200">
+                    <div class="ba-image-container mb-6 h-80">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=600" alt="Dönüşüm 2" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-slate-900 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Öncesi</div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Sonrası</div>
+                    </div>
+                    <div class="text-center pb-4">
+                        <h4 class="font-bold text-xl mb-1 uppercase italic">Ahmet T.</h4>
+                        <p class="text-green-600 font-black text-2xl">-24 KG</p>
+                        <p class="text-slate-400 text-xs uppercase mt-2 font-bold tracking-tighter">"Göbek Problemine Son"</p>
+                    </div>
+                </div>
+
+                <!-- Dönüşüm 3 -->
+                <div class="transformation-card bg-white rounded-[2rem] p-4 shadow-xl border border-slate-200">
+                    <div class="ba-image-container mb-6 h-80">
+                        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=600" alt="Dönüşüm 3" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-slate-900 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Öncesi</div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Sonrası</div>
+                    </div>
+                    <div class="text-center pb-4">
+                        <h4 class="font-bold text-xl mb-1 uppercase italic">Selin Y.</h4>
+                        <p class="text-green-600 font-black text-2xl">-12 KG</p>
+                        <p class="text-slate-400 text-xs uppercase mt-2 font-bold tracking-tighter">"Düğünüme Hazırlandım"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-green-600 transition shadow-lg uppercase italic tracking-widest">Tüm Dönüşümleri Gör</a>
             </div>
         </div>
     </section>
