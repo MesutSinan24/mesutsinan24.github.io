@@ -38,6 +38,36 @@
             border-radius: 1.5rem;
         }
 
+        /* Eski Hal - Siyah Beyaz ve Doğal Kilolu Temsili */
+        .old-version {
+            filter: grayscale(100%);
+        }
+
+        /* Yeni Hal - Renkli ve Fit Temsili */
+        .new-version {
+            filter: saturate(1.1);
+        }
+
+        .vs-badge {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            background: white;
+            color: #16a34a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            border: 2px solid #16a34a;
+        }
+
         .floating-card {
             animation: float 3s ease-in-out infinite;
         }
@@ -52,14 +82,6 @@
             scroll-margin-top: 80px; 
             width: 100%;
         }
-
-        /* Öncesi Sonrası Özel Stilleri */
-        .transformation-card {
-            transition: all 0.4s ease;
-        }
-        .transformation-card:hover {
-            transform: translateY(-10px);
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -73,7 +95,7 @@
                 </div>
                 <span class="font-bold text-lg italic uppercase leading-tight select-none">
                     Herbalife Bağımsız <br class="sm:hidden">
-                    <span class="text-green-600">Sağlıklı Beslenme Rehberi</span>
+                    <span class="text-green-600">Sağlıklı Yaşam Rehberi</span>
                 </span>
             </a>
             
@@ -177,67 +199,75 @@
         </div>
     </section>
 
-    <!-- ÖNCESİ / SONRASI BÖLÜMÜ -->
-    <section id="donusumler" class="py-24 px-4 bg-slate-100">
+    <!-- ÖNCESİ / SONRASI BÖLÜMÜ (Yeni Eklenen Kısım) -->
+    <section id="donusumler" class="py-24 px-4 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <span class="text-green-600 font-bold text-sm uppercase tracking-widest mb-4 inline-block italic">Başarı Hikayeleri</span>
-                <h2 class="text-4xl lg:text-5xl font-black italic uppercase leading-tight">Değişimi <span class="text-green-600">Gözlerinle</span> Gör</h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Sadece kilo vermiyoruz; yeni bir yaşam tarzı inşa ediyoruz. İşte senin gibi yola çıkanların sonuçları.</p>
+                <h2 class="text-4xl font-black italic uppercase">Değişimi <span class="text-green-600">Fark Et</span></h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Birlikte yola çıktığımız danışanlarımızın muazzam değişimleri.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Dönüşüm 1 -->
-                <div class="transformation-card bg-white rounded-[2rem] p-4 shadow-xl border border-slate-200">
-                    <div class="ba-image-container mb-6 h-80">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600" alt="Dönüşüm 1" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-slate-900 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Öncesi</div>
-                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Sonrası</div>
+                <!-- Danışan 1 - Kadın -->
+                <div class="bg-white p-5 rounded-[2.5rem] shadow-xl">
+                    <div class="relative flex gap-2 mb-6">
+                        <div class="w-1/2 ba-image-container old-version">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400&h=600" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="vs-badge">VS</div>
+                        <div class="w-1/2 ba-image-container new-version">
+                            <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=400&h=600" class="w-full h-64 object-cover">
+                        </div>
                     </div>
-                    <div class="text-center pb-4">
-                        <h4 class="font-bold text-xl mb-1 uppercase italic">Merve H.</h4>
-                        <p class="text-green-600 font-black text-2xl">-18 KG</p>
-                        <p class="text-slate-400 text-xs uppercase mt-2 font-bold tracking-tighter">"Enerjim Yerine Geldi"</p>
-                    </div>
-                </div>
-
-                <!-- Dönüşüm 2 -->
-                <div class="transformation-card bg-white rounded-[2rem] p-4 shadow-xl border border-slate-200">
-                    <div class="ba-image-container mb-6 h-80">
-                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=600" alt="Dönüşüm 2" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-slate-900 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Öncesi</div>
-                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Sonrası</div>
-                    </div>
-                    <div class="text-center pb-4">
-                        <h4 class="font-bold text-xl mb-1 uppercase italic">Ahmet T.</h4>
-                        <p class="text-green-600 font-black text-2xl">-24 KG</p>
-                        <p class="text-slate-400 text-xs uppercase mt-2 font-bold tracking-tighter">"Göbek Problemine Son"</p>
+                    <div class="text-center">
+                        <span class="bg-green-100 text-green-700 text-[10px] font-black px-3 py-1 rounded-full uppercase italic">-18 KG</span>
+                        <h4 class="text-lg font-bold mt-2 italic">Zeynep Hanım</h4>
+                        <p class="text-slate-500 text-xs mt-1 italic">"Yeniden doğmuş gibiyim."</p>
                     </div>
                 </div>
 
-                <!-- Dönüşüm 3 -->
-                <div class="transformation-card bg-white rounded-[2rem] p-4 shadow-xl border border-slate-200">
-                    <div class="ba-image-container mb-6 h-80">
-                        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=600" alt="Dönüşüm 3" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-slate-900 text-white px-4 py-1 rounded-full text-xs font-bold uppercase">Öncesi</div>
-                        <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase shadow-lg">Sonrası</div>
+                <!-- Danışan 2 - Erkek -->
+                <div class="bg-white p-5 rounded-[2.5rem] shadow-xl">
+                    <div class="relative flex gap-2 mb-6">
+                        <div class="w-1/2 ba-image-container old-version">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=600" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="vs-badge">VS</div>
+                        <div class="w-1/2 ba-image-container new-version">
+                            <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&q=80&w=400&h=600" class="w-full h-64 object-cover">
+                        </div>
                     </div>
-                    <div class="text-center pb-4">
-                        <h4 class="font-bold text-xl mb-1 uppercase italic">Selin Y.</h4>
-                        <p class="text-green-600 font-black text-2xl">-12 KG</p>
-                        <p class="text-slate-400 text-xs uppercase mt-2 font-bold tracking-tighter">"Düğünüme Hazırlandım"</p>
+                    <div class="text-center">
+                        <span class="bg-blue-100 text-blue-700 text-[10px] font-black px-3 py-1 rounded-full uppercase italic">-24 KG</span>
+                        <h4 class="text-lg font-bold mt-2 italic">Murat Bey</h4>
+                        <p class="text-slate-500 text-xs mt-1 italic">"Göbeğimden ve yorgunluktan kurtuldum."</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="mt-12 text-center">
-                <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-green-600 transition shadow-lg uppercase italic tracking-widest">Tüm Dönüşümleri Gör</a>
+
+                <!-- Danışan 3 - Kadın -->
+                <div class="bg-white p-5 rounded-[2.5rem] shadow-xl">
+                    <div class="relative flex gap-2 mb-6">
+                        <div class="w-1/2 ba-image-container old-version">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=400&h=600" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="vs-badge">VS</div>
+                        <div class="w-1/2 ba-image-container new-version">
+                            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&q=80&w=400&h=600" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="bg-green-100 text-green-700 text-[10px] font-black px-3 py-1 rounded-full uppercase italic">-12 KG</span>
+                        <h4 class="text-lg font-bold mt-2 italic">Selin Hanım</h4>
+                        <p class="text-slate-500 text-xs mt-1 italic">"Kalıcı beslenmeyi öğrendim."</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- VKİ Hesaplama -->
-    <section id="vki" class="py-24 px-4 bg-slate-50">
+    <section id="vki" class="py-24 px-4 bg-white">
         <div class="max-w-4xl mx-auto">
             <div class="bg-slate-900 rounded-[3rem] p-8 lg:p-16 shadow-2xl relative overflow-hidden">
                 <div class="relative z-10 text-center mb-10 text-white">
@@ -255,7 +285,7 @@
                             <label class="block text-slate-400 text-sm font-bold mb-2 uppercase">Kilon (kg)</label>
                             <input type="number" id="weight" placeholder="Örn: 70" class="w-full bg-slate-800 border-none rounded-2xl p-4 text-white focus:ring-2 focus:ring-green-500 outline-none">
                         </div>
-                        <button onclick="calculateBMI()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-700 transition uppercase">Hesapla</button>
+                        <button onclick="calculateBMI()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-700 transition uppercase shadow-xl">Hesapla</button>
                     </div>
 
                     <div id="result-box" class="hidden bg-slate-800/50 rounded-3xl p-8 border border-slate-700 text-center">
@@ -271,14 +301,14 @@
     </section>
 
     <!-- Hediye Kampanyası -->
-    <section id="kampanya" class="py-20 px-4 bg-white">
+    <section id="kampanya" class="py-20 px-4 bg-slate-50">
         <div class="max-w-6xl mx-auto">
-            <div class="bg-slate-50 rounded-[3.5rem] overflow-hidden shadow-xl flex flex-col lg:flex-row items-stretch border border-slate-100">
+            <div class="bg-white rounded-[3.5rem] overflow-hidden shadow-xl flex flex-col lg:flex-row items-stretch border border-slate-100">
                 <div class="lg:w-3/5 p-12 lg:p-20">
                     <span class="text-orange-500 font-bold text-xs uppercase tracking-widest mb-4 inline-block italic">Özel Fırsat</span>
                     <h2 class="text-4xl lg:text-5xl font-black text-slate-900 mb-6 italic leading-tight uppercase">WIAMI Bluetooth <br><span class="text-green-600">Akıllı Tartı Hediye!</span></h2>
                     <p class="text-slate-600 mb-8 text-lg">5.000 TL ve üzeri siparişlerinizde gelişiminizi takip etmeniz için akıllı tartınız benden.</p>
-                    <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-black transition uppercase">Bilgi Al</a>
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-black transition uppercase tracking-widest shadow-lg">Bilgi Al</a>
                 </div>
                 <div class="lg:w-2/5 bg-green-600 flex items-center justify-center p-12">
                      <svg width="200" height="200" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -299,7 +329,7 @@
     <footer class="bg-slate-900 text-white py-12 px-4 text-center">
         <h4 class="text-2xl font-bold italic mb-2 uppercase">AYŞEGÜL UYSAL</h4>
         <p class="text-green-500 text-sm font-semibold uppercase mb-8">Herbalife Bağımsız Sağlıklı Beslenme Koçu</p>
-        <p class="text-slate-500 text-[10px] tracking-widest uppercase italic">Bu sayfa bir bağımsız distribütör tarafından hazırlanmıştır.</p>
+        <p class="text-slate-500 text-[10px] tracking-widest uppercase italic max-w-sm mx-auto leading-relaxed">Bu sayfa bir bağımsız distribütör tarafından hazırlanmıştır. Ürünler ilaç değildir.</p>
     </footer>
 
     <script>
