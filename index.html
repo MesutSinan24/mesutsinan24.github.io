@@ -12,17 +12,14 @@
         .gradient-text { background: linear-gradient(90deg, #4ade80, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-bg { background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; }
         
-        /* Kartvizit Animasyonu */
-        .card-float {
-            animation: float 3s ease-in-out infinite;
-        }
+        .card-float { animation: float 3s ease-in-out infinite; }
         @keyframes float {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
         }
 
-        /* Smooth scroll padding for fixed header */
+        .tarti-glow { box-shadow: 0 0 20px rgba(74, 222, 128, 0.2); }
         section { scroll-margin-top: 80px; }
     </style>
 </head>
@@ -39,9 +36,9 @@
             </div>
             <div class="hidden md:flex space-x-6 font-medium text-sm">
                 <a href="#vki" class="hover:text-green-600 transition">VKİ Hesapla</a>
+                <a href="#tarti" class="hover:text-green-600 transition font-bold text-green-600">Hediye Tartı</a>
                 <a href="#kategoriler" class="hover:text-green-600 transition">Ürün Grupları</a>
-                <a href="#hizmetler" class="hover:text-green-600 transition">Neden Ben?</a>
-                <a href="https://wa.me/905000000000" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition shadow-md">Koçluk Al</a>
+                <a href="https://wa.me/905435322497" class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition shadow-md">Koçluk Al</a>
             </div>
         </div>
     </nav>
@@ -50,7 +47,7 @@
     <section class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-black/40"></div>
         
-        <!-- SAĞ ÜST Kartvizit Alanı (Masaüstü için güncellendi) -->
+        <!-- SAĞ ÜST Kartvizit -->
         <div class="absolute top-32 right-6 z-10 hidden lg:block card-float">
             <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-6 rounded-2xl shadow-2xl w-72 text-right">
                 <div class="flex items-center justify-end space-x-4 mb-4">
@@ -73,9 +70,9 @@
                     </div>
                 </div>
                 <div class="mt-5 pt-4 border-t border-white/10 flex justify-around">
-                    <!-- Instagram adresi guluysall24 olarak hazırlandı -->
                     <a href="https://instagram.com/guluysall24" target="_blank" class="text-white hover:text-green-400 transition"><i class="fab fa-instagram fa-lg"></i></a>
-                    <a href="#" target="_blank" class="text-white hover:text-green-400 transition"><i class="fab fa-facebook fa-lg"></i></a>
+                    <!-- Facebook Adresi Eklendi -->
+                    <a href="https://facebook.com/guluysall24" target="_blank" class="text-white hover:text-green-400 transition"><i class="fab fa-facebook fa-lg"></i></a>
                     <a href="mailto:guluysal@gmail.com" class="text-white hover:text-green-400 transition"><i class="fas fa-envelope fa-lg"></i></a>
                 </div>
             </div>
@@ -98,8 +95,8 @@
     <section id="vki" class="py-24 px-6 bg-white">
         <div class="max-w-4xl mx-auto bg-green-50 rounded-[3rem] p-8 md:p-12 shadow-inner border border-green-100">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold mb-4 text-gray-900">Vücut Analiz Testi</h2>
-                <p class="text-gray-600">İhtiyacın olan programı belirlemek için değerlerini gir.</p>
+                <h2 class="text-3xl font-bold mb-4 text-gray-900 font-serif">Vücut Analiz Testi</h2>
+                <p class="text-gray-600 italic">İhtiyacın olan programı belirlemek için değerlerini gir.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="space-y-4">
@@ -109,13 +106,74 @@
                 </div>
                 <div id="vki-sonuc" class="bg-white rounded-3xl p-6 flex flex-col justify-center items-center text-center border border-green-100 shadow-sm min-h-[200px]">
                     <i class="fas fa-chart-bar text-4xl text-green-200 mb-4"></i>
-                    <p class="text-gray-400 italic">Verileri girdiğinde analizin burada görünecek.</p>
+                    <p class="text-gray-400 italic text-sm">Verileri girdiğinde analizin burada görünecek.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kapsamlı Ürün Kategorileri -->
+    <!-- AKILLI TARTI REKLAM ALANI -->
+    <section id="tarti" class="py-20 px-6 bg-gradient-to-br from-white to-green-50 overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-white rounded-[3rem] shadow-2xl border border-green-100 overflow-hidden grid md:grid-cols-12 gap-0">
+                <!-- Sol: Tartı Tanıtımı -->
+                <div class="md:col-span-7 p-10 lg:p-16">
+                    <div class="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-xs font-bold mb-6 tracking-widest uppercase">Kaçırılmayacak Fırsat</div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 leading-tight italic">WIAMI Akıllı Yağ Ölçer <br><span class="text-green-600 underline">Bluetooth Tartı</span></h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">Sadece kilonuzu değil; vücut yağ oranınızı, kas kütlenizi, su oranınızı ve kemik yoğunluğunuzu anlık olarak telefonunuzdan takip edin.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center space-x-3 text-sm text-gray-700 font-medium">
+                            <i class="fas fa-mobile-alt text-blue-500 text-xl"></i>
+                            <span>Bluetooth Uygulama</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-sm text-gray-700 font-medium">
+                            <i class="fas fa-microchip text-green-500 text-xl"></i>
+                            <span>12 Farklı Veri Analizi</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-600 p-6 rounded-2xl text-white tarti-glow">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-white text-green-600 w-12 h-12 rounded-full flex items-center justify-center text-2xl shrink-0 shadow-lg">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg leading-tight italic">KAMPANYA: ŞİMDİ HEDİYE!</h4>
+                                <p class="text-green-100 text-sm">5.000 TL ve üzeri program alışverişlerinde bu akıllı tartı bizden size hediye!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center gap-4">
+                        <a href="https://wa.me/905435322497?text=Akıllı tartı hediyeli kampanya hakkında bilgi alabilir miyim?" class="bg-gray-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-black transition shadow-lg text-center flex-1 md:flex-none">Bilgi Al & Sipariş Ver</a>
+                    </div>
+                </div>
+
+                <!-- Sağ: Tartı Görseli (Temsili Modern İlüstrasyon/Placeholder) -->
+                <div class="md:col-span-5 bg-green-500 relative flex items-center justify-center p-12">
+                    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20"></div>
+                    <div class="relative z-10 text-center">
+                        <div class="w-64 h-64 bg-white rounded-3xl shadow-2xl flex items-center justify-center transform rotate-6 hover:rotate-0 transition duration-500">
+                             <!-- Temsili Tartı İkonu/Görseli -->
+                             <div class="text-center p-8">
+                                <i class="fas fa-weight-hanging text-6xl text-gray-200 mb-2"></i>
+                                <div class="text-green-500 font-bold text-2xl">72.4</div>
+                                <div class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">WIAMI SMART</div>
+                             </div>
+                        </div>
+                        <div class="mt-8">
+                             <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2 rounded-full text-white text-sm font-bold border border-white/30">
+                                Stoklarla Sınırlıdır!
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ürün Kategorileri -->
     <section id="kategoriler" class="py-24 px-6 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -137,10 +195,9 @@
                         <ul class="space-y-3 mb-8 text-sm">
                             <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Başlangıç & İleri Seviye Paketler</li>
                             <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Öğün Yerine Geçen Shake Serisi</li>
-                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 text-xs"></i> Kişiye Özel Takip Programı</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/905000000000?text=KiloKontrolSetleriBilgi" class="bg-green-600 text-white py-4 rounded-xl text-center font-bold hover:bg-green-700 transition">Paketleri İncele</a>
+                    <a href="https://wa.me/905435322497?text=KiloKontrolSetleriBilgi" class="bg-green-600 text-white py-4 rounded-xl text-center font-bold hover:bg-green-700 transition">Paketleri İncele</a>
                 </div>
 
                 <!-- 2. Ara Öğünler & Protein -->
@@ -153,51 +210,8 @@
                             <h3 class="text-2xl font-bold text-gray-900">Sağlıklı Ara Öğünler</h3>
                         </div>
                         <p class="text-gray-500 text-sm mb-6 leading-relaxed">Tatlı krizlerine son veren, yüksek proteinli ve düşük kalorili atıştırmalık çözümleri.</p>
-                        <ul class="space-y-3 mb-8 text-sm">
-                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Protein Barlar & Atıştırmalıklar</li>
-                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Kavrulmuş Soya Fasulyesi</li>
-                            <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2 text-xs"></i> Gurme Domates Çorbası</li>
-                        </ul>
                     </div>
-                    <a href="https://wa.me/905000000000?text=AraOgunlerBilgi" class="bg-blue-600 text-white py-4 rounded-xl text-center font-bold hover:bg-blue-700 transition">Lezzetleri Keşfet</a>
-                </div>
-
-                <!-- 3. İçecekler & Hidrasyon -->
-                <div class="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-xl transition border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fas fa-mug-hot"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">İçecekler & Detoks</h3>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Ödem atan çaylar, sindirimi destekleyen aloe vera içecekleri ve hidrasyon ürünleri.</p>
-                        <ul class="space-y-3 mb-8 text-sm">
-                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2 text-xs"></i> Bitkisel Konsantre Çaylar</li>
-                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2 text-xs"></i> Aloe Konsantre İçecek</li>
-                            <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2 text-xs"></i> Enerji Veren Lifli Karışımlar</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/905000000000?text=IceceklerBilgi" class="bg-yellow-600 text-white py-4 rounded-xl text-center font-bold hover:bg-yellow-700 transition">Katalog İçin Yaz</a>
-                </div>
-
-                <!-- 4. Kişisel Bakım & Cilt -->
-                <div class="bg-white rounded-[2rem] p-8 shadow-lg hover:shadow-xl transition border border-gray-100 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-14 h-14 bg-pink-100 text-pink-600 rounded-2xl flex items-center justify-center text-2xl">
-                                <i class="fas fa-spa"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900">Bakım & Cilt Sağlığı</h3>
-                        </div>
-                        <p class="text-gray-500 text-sm mb-6 leading-relaxed">Beslenmeyi cildine taşı. Bitkisel içerikli şampuanlar, kremler ve cilt bakım setleri.</p>
-                        <ul class="space-y-3 mb-8 text-sm">
-                            <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2 text-xs"></i> Herbal Aloe Vücut Bakımı</li>
-                            <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2 text-xs"></i> SKIN Serisi Cilt Bakımı</li>
-                            <li class="flex items-center"><i class="fas fa-check text-pink-500 mr-2 text-xs"></i> Vitamin Destekli Kremler</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/905000000000?text=BakimUrunleriBilgi" class="bg-pink-600 text-white py-4 rounded-xl text-center font-bold hover:bg-pink-700 transition">Işıltını Keşfet</a>
+                    <a href="https://wa.me/905435322497?text=AraOgunlerBilgi" class="bg-blue-600 text-white py-4 rounded-xl text-center font-bold hover:bg-blue-700 transition">Lezzetleri Keşfet</a>
                 </div>
             </div>
         </div>
@@ -212,14 +226,14 @@
                     <div class="flex gap-6">
                         <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0 border border-green-500/30"><i class="fas fa-user-friends"></i></div>
                         <div>
-                            <h4 class="text-xl font-semibold mb-2">Samimi Destek</h4>
+                            <h4 class="text-xl font-semibold mb-2 text-white">Samimi Destek</h4>
                             <p class="text-gray-400 text-sm">Sadece bir müşteri değil, yol arkadaşımsın. Her adımında yanındayım.</p>
                         </div>
                     </div>
                     <div class="flex gap-6">
                         <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/30"><i class="fas fa-clipboard-list"></i></div>
                         <div>
-                            <h4 class="text-xl font-semibold mb-2">Kişisel Planlama</h4>
+                            <h4 class="text-xl font-semibold mb-2 text-white">Kişisel Planlama</h4>
                             <p class="text-gray-400 text-sm">Senin sevdiğin tatlara ve yaşam tarzına uygun bir beslenme düzeni kurarız.</p>
                         </div>
                     </div>
@@ -239,15 +253,16 @@
                 <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-xs">
                     <i class="fas fa-leaf"></i>
                 </div>
-                <span class="font-bold text-lg italic uppercase text-gray-900">Ayşegül UYSAL [Beslenme Koçu]</span>
+                <span class="font-bold text-lg italic uppercase text-gray-900 tracking-tight">Ayşegül UYSAL [Beslenme Koçu]</span>
             </div>
-            <p class="text-gray-400 text-[10px] max-w-xl mx-auto mb-8 uppercase tracking-[0.2em] font-semibold">
+            <p class="text-gray-400 text-[10px] max-w-xl mx-auto mb-8 uppercase tracking-[0.2em] font-semibold italic">
                 Bağımsız Herbalife Distribütörü. Bu site tıbbi tavsiye yerine geçmez.
             </p>
-            <div class="flex justify-center space-x-6 text-gray-300">
+            <div class="flex justify-center space-x-6 text-gray-400">
                 <a href="https://instagram.com/guluysall24" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#" class="hover:text-green-500 transition"><i class="fab fa-whatsapp fa-2x"></i></a>
-                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-facebook fa-2x"></i></a>
+                <!-- Facebook Footer Eklendi -->
+                <a href="https://facebook.com/guluysall24" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://wa.me/905435322497" class="hover:text-green-500 transition"><i class="fab fa-whatsapp fa-2x"></i></a>
             </div>
         </div>
     </footer>
@@ -269,13 +284,13 @@
                 else { durum = "Obez - Acil Program Desteği"; color = "text-red-500"; }
 
                 resultDiv.innerHTML = `
-                    <h4 class="text-gray-400 text-[10px] font-bold uppercase mb-1 tracking-widest">Endeks Sonucun</h4>
+                    <h4 class="text-gray-400 text-[10px] font-bold uppercase mb-1 tracking-widest">Analiz Tamamlandı</h4>
                     <span class="text-6xl font-bold ${color}">${bmi}</span>
                     <p class="mt-4 font-bold text-gray-800 text-sm">${durum}</p>
-                    <a href="https://wa.me/905000000000?text=VKİ sonucum ${bmi} çıktı, kardeşçe bir desteğe ihtiyacım var" class="mt-6 inline-block bg-gray-900 text-white px-6 py-2 rounded-lg text-xs font-bold hover:bg-black transition">Bana Özel Programı Yaz &rarr;</a>
+                    <a href="https://wa.me/905435322497?text=VKİ sonucum ${bmi} çıktı, program desteği istiyorum" class="mt-6 inline-block bg-green-600 text-white px-6 py-2 rounded-lg text-xs font-bold hover:bg-green-700 transition">Ücretsiz Program Danışmanlığı &rarr;</a>
                 `;
             } else {
-                resultDiv.innerHTML = `<p class="text-red-500 text-sm">Lütfen geçerli değerler girin!</p>`;
+                resultDiv.innerHTML = `<p class="text-red-500 text-sm italic font-bold">Lütfen değerleri doğru girin!</p>`;
             }
         }
     </script>
