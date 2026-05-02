@@ -39,6 +39,16 @@
             text-transform: uppercase;
         }
 
+        .floating-card {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
         section { scroll-margin-top: 80px; }
     </style>
 </head>
@@ -54,30 +64,87 @@
                 <span class="font-bold text-lg italic uppercase leading-tight">Herbalife Bağımsız <br class="sm:hidden"><span class="text-green-600">Sağlıklı Yaşam Rehberi</span></span>
             </div>
             <div class="hidden lg:flex items-center gap-6">
-                <a href="#vki" class="text-sm font-semibold hover:text-green-600">VKİ</a>
-                <a href="#degisimler" class="text-sm font-semibold hover:text-green-600">Değişimler</a>
-                <a href="#kampanya" class="text-sm font-semibold hover:text-green-600">Hediye</a>
-                <a href="https://instagram.com/guluysall24" target="_blank" class="bg-green-600 text-white px-5 py-2 rounded-full font-bold hover:bg-green-700 transition">Koçluk Al</a>
+                <a href="#vki" class="text-sm font-semibold hover:text-green-600 transition">VKİ Hesapla</a>
+                <a href="#degisimler" class="text-sm font-semibold hover:text-green-600 transition">Değişimler</a>
+                <a href="#kampanya" class="text-sm font-semibold hover:text-green-600 transition">Hediye</a>
+                <a href="https://instagram.com/guluysall24" target="_blank" class="bg-green-600 text-white px-5 py-2 rounded-full font-bold hover:bg-green-700 transition shadow-md">Koçluk Al</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Bölümü -->
     <header class="hero-section min-h-screen flex items-center relative pt-20 px-4">
         <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-white z-10">
-                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 italic italic">Senin <span class="text-green-400 underline decoration-white/20">Sıran</span> Geldi!</h1>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 italic">Senin <span class="text-green-400 underline decoration-white/20">Sıran</span> Geldi!</h1>
                 <p class="text-lg text-slate-200 mb-8 max-w-lg">Binlerce kişi başardı, şimdi senin hikayeni yazma zamanı. Aç kalmadan, enerjini kaybetmeden hedefine ulaş.</p>
                 <div class="flex flex-wrap gap-4">
                     <a href="https://instagram.com/guluysall24" target="_blank" class="bg-white text-green-700 px-8 py-4 rounded-2xl font-bold hover:bg-slate-100 transition shadow-xl uppercase tracking-tighter">Değişimi Başlat</a>
                     <a href="#degisimler" class="glass-effect px-8 py-4 rounded-2xl font-bold hover:bg-white/20 transition uppercase tracking-tighter">Sonuçları Gör</a>
                 </div>
             </div>
+
+            <!-- Sağ Üst Kartvizit (Geri Getirildi) -->
+            <div class="hidden lg:flex justify-end z-10">
+                <div class="floating-card glass-effect p-8 rounded-[2.5rem] w-80 shadow-2xl border border-white/30">
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200" alt="Ayşegül Uysal" class="w-24 h-24 rounded-full border-4 border-green-500 mb-4 object-cover shadow-lg">
+                        <h3 class="text-white font-bold text-xl uppercase italic">Ayşegül Uysal</h3>
+                        <p class="text-green-400 text-xs font-bold tracking-widest mb-4">SAĞLIKLI YAŞAM REHBERİ</p>
+                        <div class="w-full bg-white/10 rounded-2xl p-4 mb-4">
+                            <p class="text-white/80 text-xs mb-1 uppercase">Aktif Danışan</p>
+                            <p class="text-white font-bold text-2xl">250+</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://instagram.com/guluysall24" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-green-700 hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/905435322497" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-green-700 hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
+    <!-- VKİ Hesaplama Alanı (Tamir Edildi) -->
+    <section id="vki" class="py-24 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-slate-900 rounded-[3rem] p-8 lg:p-16 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i class="fas fa-weight text-9xl text-white"></i>
+                </div>
+                
+                <div class="relative z-10 text-center mb-10">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white italic">Vücut Kitle Endeksini <span class="text-green-500">Hesapla</span></h2>
+                    <p class="text-slate-400 mt-2">İdeal kilona ulaşmak için ilk adımı at.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-slate-400 text-sm font-bold mb-2 uppercase">Boyun (cm)</label>
+                            <input type="number" id="height" placeholder="Örn: 170" class="w-full bg-slate-800 border-none rounded-2xl p-4 text-white focus:ring-2 focus:ring-green-500 transition outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-sm font-bold mb-2 uppercase">Kilon (kg)</label>
+                            <input type="number" id="weight" placeholder="Örn: 70" class="w-full bg-slate-800 border-none rounded-2xl p-4 text-white focus:ring-2 focus:ring-green-500 transition outline-none">
+                        </div>
+                        <button onclick="calculateBMI()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-700 transition shadow-lg shadow-green-900/20 uppercase">Hesapla</button>
+                    </div>
+
+                    <div id="result-box" class="hidden bg-slate-800/50 rounded-3xl p-8 border border-slate-700 text-center">
+                        <p class="text-slate-400 text-sm uppercase font-bold">Sonucun</p>
+                        <div id="bmi-value" class="text-6xl font-black text-green-500 my-2 italic">--</div>
+                        <div id="bmi-status" class="text-white font-bold text-xl uppercase mb-4 tracking-tight">Durum Bekleniyor</div>
+                        <p id="bmi-desc" class="text-slate-400 text-sm mb-6">Boy ve kilo bilgilerinizi girerek ideal kilonuzda olup olmadığınızı öğrenin.</p>
+                        <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-white text-slate-900 px-6 py-2 rounded-xl text-xs font-bold uppercase hover:bg-green-500 hover:text-white transition">Ücretsiz Danışmanlık Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Önce / Sonra Bölümü -->
-    <section id="degisimler" class="py-24 bg-white px-4">
+    <section id="degisimler" class="py-24 bg-slate-50 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <span class="text-green-600 font-bold text-sm uppercase tracking-widest">Başarı Hikayeleri</span>
@@ -86,69 +153,62 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Değişim Kartı 1 -->
-                <div class="bg-slate-50 p-4 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group">
+                <!-- Kart 1 -->
+                <div class="bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group">
                     <div class="grid grid-cols-2 gap-2 mb-6">
                         <div class="ba-image-container">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400" alt="Önceki Hali" class="h-64 w-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400" alt="Önce" class="h-64 w-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition">
                             <span class="ba-tag bg-slate-900 text-white left-2">Önce</span>
                         </div>
                         <div class="ba-image-container">
-                            <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?auto=format&fit=crop&q=80&w=400" alt="Sonraki Hali" class="h-64 w-full object-cover border-2 border-green-500">
+                            <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?auto=format&fit=crop&q=80&w=400" alt="Sonra" class="h-64 w-full object-cover border-2 border-green-500">
                             <span class="ba-tag bg-green-500 text-white right-2">Sonra</span>
                         </div>
                     </div>
                     <div class="px-2 text-center">
                         <h4 class="font-bold text-lg mb-1">Merve Hanım</h4>
                         <p class="text-green-600 font-bold text-sm mb-4 italic">-12 KG Kontrolü</p>
-                        <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-white border border-slate-200 rounded-xl text-xs font-bold hover:bg-green-600 hover:text-white transition uppercase">Benzer Sonuç İstiyorum</a>
+                        <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-slate-50 rounded-xl text-xs font-bold hover:bg-green-600 hover:text-white transition uppercase">Benzer Sonuç İstiyorum</a>
                     </div>
                 </div>
 
-                <!-- Değişim Kartı 2 -->
-                <div class="bg-slate-50 p-4 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group">
+                <!-- Kart 2 -->
+                <div class="bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group">
                     <div class="grid grid-cols-2 gap-2 mb-6">
                         <div class="ba-image-container">
-                            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=400" alt="Önceki Hali" class="h-64 w-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition">
+                            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=400" alt="Önce" class="h-64 w-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition">
                             <span class="ba-tag bg-slate-900 text-white left-2">Önce</span>
                         </div>
                         <div class="ba-image-container">
-                            <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&q=80&w=400" alt="Sonraki Hali" class="h-64 w-full object-cover border-2 border-green-500">
+                            <img src="https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&q=80&w=400" alt="Sonra" class="h-64 w-full object-cover border-2 border-green-500">
                             <span class="ba-tag bg-green-500 text-white right-2">Sonra</span>
                         </div>
                     </div>
                     <div class="px-2 text-center">
                         <h4 class="font-bold text-lg mb-1">Ahmet Bey</h4>
                         <p class="text-green-600 font-bold text-sm mb-4 italic">-18 KG Kontrolü</p>
-                        <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-white border border-slate-200 rounded-xl text-xs font-bold hover:bg-green-600 hover:text-white transition uppercase">Benzer Sonuç İstiyorum</a>
+                        <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-slate-50 rounded-xl text-xs font-bold hover:bg-green-600 hover:text-white transition uppercase">Benzer Sonuç İstiyorum</a>
                     </div>
                 </div>
 
-                <!-- Değişim Kartı 3 -->
-                <div class="bg-slate-50 p-4 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group">
+                <!-- Kart 3 -->
+                <div class="bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition duration-500 group">
                     <div class="grid grid-cols-2 gap-2 mb-6">
                         <div class="ba-image-container">
-                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=400" alt="Önceki Hali" class="h-64 w-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition">
+                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=400" alt="Önce" class="h-64 w-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition">
                             <span class="ba-tag bg-slate-900 text-white left-2">Önce</span>
                         </div>
                         <div class="ba-image-container">
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Sonraki Hali" class="h-64 w-full object-cover border-2 border-green-500">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" alt="Sonra" class="h-64 w-full object-cover border-2 border-green-500">
                             <span class="ba-tag bg-green-500 text-white right-2">Sonra</span>
                         </div>
                     </div>
                     <div class="px-2 text-center">
                         <h4 class="font-bold text-lg mb-1">Fatma Hanım</h4>
                         <p class="text-green-600 font-bold text-sm mb-4 italic">-9 KG & Sıkılaşma</p>
-                        <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-white border border-slate-200 rounded-xl text-xs font-bold hover:bg-green-600 hover:text-white transition uppercase">Benzer Sonuç İstiyorum</a>
+                        <a href="https://instagram.com/guluysall24" target="_blank" class="block w-full py-3 bg-slate-50 rounded-xl text-xs font-bold hover:bg-green-600 hover:text-white transition uppercase">Benzer Sonuç İstiyorum</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="mt-16 text-center">
-                <p class="text-slate-500 italic text-sm mb-6">Sonuçlar kişiden kişiye farklılık gösterebilir. Profesyonel destek için yanındayım.</p>
-                <a href="https://instagram.com/guluysall24" target="_blank" class="inline-flex items-center gap-2 text-green-700 font-bold hover:underline">
-                    Daha Fazla Sonuç İçin Instagram'ı Ziyaret Et <i class="fas fa-external-link-alt"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -183,15 +243,55 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-16 px-4">
         <div class="max-w-7xl mx-auto text-center">
-            <h4 class="text-2xl font-bold italic mb-2">AYŞEGÜL UYSAL</h4>
-            <p class="text-green-500 text-sm font-semibold uppercase mb-8">Herbalife Bağımsız Sağlıklı Yaşam Rehberi</p>
-            <div class="flex justify-center gap-8 mb-12">
-                <a href="https://instagram.com/guluysall24" target="_blank" class="hover:text-green-500 transition text-2xl"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/905435322497" target="_blank" class="hover:text-green-500 transition text-2xl"><i class="fab fa-whatsapp"></i></a>
+            <h4 class="text-2xl font-bold italic mb-2 uppercase">AYŞEGÜL UYSAL</h4>
+            <p class="text-green-500 text-sm font-semibold uppercase mb-8 tracking-widest">Herbalife Bağımsız Sağlıklı Yaşam Rehberi</p>
+            <div class="flex justify-center gap-8 mb-12 text-2xl">
+                <a href="https://instagram.com/guluysall24" target="_blank" class="hover:text-green-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/905435322497" target="_blank" class="hover:text-green-500 transition"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p class="text-slate-500 text-[10px] tracking-widest uppercase">Herbalife Bağımsız Distribütörü • © 2024</p>
+            <p class="text-slate-500 text-[10px] tracking-widest uppercase">Herbalife Bağımsız Distribütörü • Tüm Hakları Saklıdır © 2024</p>
         </div>
     </footer>
+
+    <script>
+        function calculateBMI() {
+            const h = document.getElementById('height').value / 100;
+            const w = document.getElementById('weight').value;
+            
+            if (h > 0 && w > 0) {
+                const bmi = (w / (h * h)).toFixed(1);
+                const resultBox = document.getElementById('result-box');
+                const bmiVal = document.getElementById('bmi-value');
+                const bmiStatus = document.getElementById('bmi-status');
+                const bmiDesc = document.getElementById('bmi-desc');
+
+                resultBox.classList.remove('hidden');
+                bmiVal.innerText = bmi;
+
+                if (bmi < 18.5) {
+                    bmiStatus.innerText = "Zayıf";
+                    bmiStatus.className = "text-blue-400 font-bold text-xl uppercase mb-4 tracking-tight";
+                    bmiDesc.innerText = "Vücut ağırlığınız boyunuza göre az. Sağlıklı bir şekilde kilo almak için destek alabilirsiniz.";
+                } else if (bmi < 25) {
+                    bmiStatus.innerText = "Normal";
+                    bmiStatus.className = "text-green-500 font-bold text-xl uppercase mb-4 tracking-tight";
+                    bmiDesc.innerText = "Tebrikler! İdeal kilodasınız. Bu formu korumak için dengeli beslenmeye devam edin.";
+                } else if (bmi < 30) {
+                    bmiStatus.innerText = "Fazla Kilolu";
+                    bmiStatus.className = "text-yellow-500 font-bold text-xl uppercase mb-4 tracking-tight";
+                    bmiDesc.innerText = "İdeal kilonuzun biraz üzerindesiniz. Küçük değişikliklerle formunuza kavuşabilirsiniz.";
+                } else {
+                    bmiStatus.innerText = "Obezite";
+                    bmiStatus.className = "text-red-500 font-bold text-xl uppercase mb-4 tracking-tight";
+                    bmiDesc.innerText = "Sağlığınız için kilo kontrolü yapmanız önerilir. Size özel programımla yanınızdayım.";
+                }
+                
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                alert("Lütfen geçerli boy ve kilo değerleri giriniz.");
+            }
+        }
+    </script>
 
 </body>
 </html>
