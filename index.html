@@ -15,6 +15,8 @@
 
         body { 
             font-family: 'Poppins', sans-serif; 
+            margin: 0;
+            padding: 0;
         }
         
         .hero-section {
@@ -48,6 +50,7 @@
 
         section { 
             scroll-margin-top: 80px; 
+            width: 100%;
         }
     </style>
 </head>
@@ -69,7 +72,6 @@
             <div class="hidden lg:flex items-center gap-6">
                 <a href="#hikayem" class="text-sm font-semibold hover:text-green-600 transition">Hikayem</a>
                 <a href="#vki" class="text-sm font-semibold hover:text-green-600 transition">VKİ Hesapla</a>
-                <a href="#degisimler" class="text-sm font-semibold hover:text-green-600 transition">Değişimler</a>
                 <a href="#kampanya" class="text-sm font-semibold hover:text-green-600 transition">Hediye</a>
                 <a href="https://instagram.com/guluysall24" target="_blank" class="bg-green-600 text-white px-5 py-2 rounded-full font-bold hover:bg-green-700 transition shadow-md">Koçluk Al</a>
             </div>
@@ -80,7 +82,7 @@
     <header id="top" class="hero-section min-h-screen flex items-center relative pt-20 px-4">
         <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
             <div class="text-white z-10">
-                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 italic text-balance">Senin <span class="text-green-400 underline decoration-white/20">Sıran</span> Geldi!</h1>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6 italic">Senin <span class="text-green-400 underline decoration-white/20">Sıran</span> Geldi!</h1>
                 <p class="text-lg text-slate-200 mb-8 max-w-lg">Binlerce kişi başardı, şimdi senin hikayeni yazma zamanı. Aç kalmadan, enerjini kaybetmeden hedefine ulaş.</p>
                 <div class="flex flex-wrap gap-4">
                     <a href="https://instagram.com/guluysall24" target="_blank" class="bg-white text-green-700 px-8 py-4 rounded-2xl font-bold hover:bg-slate-100 transition shadow-xl uppercase tracking-tighter">Değişimi Başlat</a>
@@ -88,22 +90,20 @@
                 </div>
             </div>
 
-            <!-- Kartvizit / Profil Alanı -->
+            <!-- Kartvizit -->
             <div class="hidden lg:flex justify-end z-10">
                 <div class="floating-card glass-effect p-8 rounded-[2.5rem] w-80 shadow-2xl border border-white/30">
                     <div class="flex flex-col items-center text-center">
-                        
-                        <!-- GitHub üzerindeki resfoto.jpg dosyası buraya bağlandı -->
                         <img 
                             src="resfoto.jpg" 
-                            alt="Ayşegül Uysal Profil Fotoğrafı" 
+                            onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200'"
+                            alt="Ayşegül Uysal" 
                             class="w-24 h-24 rounded-full border-4 border-green-500 mb-4 object-cover shadow-lg"
                         >
-                        
                         <h3 class="text-white font-bold text-xl uppercase italic">Ayşegül Uysal</h3>
                         <p class="text-green-400 text-xs font-bold tracking-widest mb-4 uppercase">Sağlıklı Yaşam Koçu</p>
                         <div class="w-full bg-white/10 rounded-2xl p-4 mb-4">
-                            <p class="text-white/80 text-xs mb-1 uppercase text-balance">Aktif Danışan</p>
+                            <p class="text-white/80 text-xs mb-1 uppercase">Aktif Danışan</p>
                             <p class="text-white font-bold text-2xl">120+</p>
                         </div>
                         <div class="flex gap-4">
@@ -116,13 +116,161 @@
         </div>
     </header>
 
-    <!-- Diğer bölümler buraya eklenebilir -->
-    
+    <!-- Hikayem Bölümü -->
+    <section id="hikayem" class="py-24 px-4 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="ba-image-container shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?auto=format&fit=crop&q=80&w=800" alt="Dönüşüm" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                            <p class="text-green-400 font-bold text-4xl mb-1 italic">-32 KG</p>
+                            <p class="text-white text-lg font-light italic">"Kendi Değişimimle Başladım"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-green-600 font-bold text-sm uppercase tracking-widest mb-4 inline-block">Ben Kimim?</span>
+                    <h2 class="text-4xl font-bold italic mb-6 leading-tight">Kendi Hikayemin <span class="text-green-600 underline decoration-slate-200">Kahramanı</span> Oldum</h2>
+                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                        Merhaba, ben Ayşegül! Sağlıklı yaşam yolculuğunda tam <b>32 kiloyu</b> geride bıraktım. Bu tecrübemi şimdi senin hedeflerine ulaşman için kullanıyorum.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="bg-slate-50 p-4 rounded-2xl border-l-4 border-green-500">
+                            <p class="text-slate-400 text-xs uppercase font-bold">Toplam Kayıp</p>
+                            <p class="text-2xl font-black text-slate-900">-32 KG</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-2xl border-l-4 border-blue-500">
+                            <p class="text-slate-400 text-xs uppercase font-bold">Süre</p>
+                            <p class="text-2xl font-black text-slate-900">7 Ay</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4 italic text-green-700">Seninle Nasıl Yol Alıyoruz?</h3>
+                    <ul class="space-y-4 text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span><b>Kişiye Özel Analiz:</b> Yaşam tarzına göre program planlıyoruz.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 w-5 h-5 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+                                <i class="fas fa-check text-green-600 text-xs"></i>
+                            </div>
+                            <span><b>7/24 Motivasyon:</b> Her an ulaşabildiğin bir rehberin oluyor.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VKİ Hesaplama -->
+    <section id="vki" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-slate-900 rounded-[3rem] p-8 lg:p-16 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 text-center mb-10 text-white">
+                    <h2 class="text-3xl lg:text-4xl font-bold italic uppercase">VKİ <span class="text-green-500">Hesapla</span></h2>
+                    <p class="text-slate-400 mt-2">İdeal kilonu öğrenmek için bilgileri gir.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-slate-400 text-sm font-bold mb-2 uppercase">Boyun (cm)</label>
+                            <input type="number" id="height" placeholder="Örn: 170" class="w-full bg-slate-800 border-none rounded-2xl p-4 text-white focus:ring-2 focus:ring-green-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-slate-400 text-sm font-bold mb-2 uppercase">Kilon (kg)</label>
+                            <input type="number" id="weight" placeholder="Örn: 70" class="w-full bg-slate-800 border-none rounded-2xl p-4 text-white focus:ring-2 focus:ring-green-500 outline-none">
+                        </div>
+                        <button onclick="calculateBMI()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-bold text-lg hover:bg-green-700 transition uppercase">Hesapla</button>
+                    </div>
+
+                    <div id="result-box" class="hidden bg-slate-800/50 rounded-3xl p-8 border border-slate-700 text-center">
+                        <p class="text-slate-400 text-sm uppercase font-bold">Vücut Kitle Endeksin</p>
+                        <div id="bmi-value" class="text-6xl font-black text-green-500 my-2 italic">--</div>
+                        <div id="bmi-status" class="text-white font-bold text-xl uppercase mb-4">Durum</div>
+                        <p id="bmi-desc" class="text-slate-400 text-sm mb-6"></p>
+                        <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-white text-slate-900 px-6 py-2 rounded-xl text-xs font-bold uppercase hover:bg-green-500 hover:text-white transition">Ücretsiz Danışmanlık Al</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hediye Kampanyası -->
+    <section id="kampanya" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="bg-slate-50 rounded-[3.5rem] overflow-hidden shadow-xl flex flex-col lg:flex-row items-stretch border border-slate-100">
+                <div class="lg:w-3/5 p-12 lg:p-20">
+                    <span class="text-orange-500 font-bold text-xs uppercase tracking-widest mb-4 inline-block italic">Özel Fırsat</span>
+                    <h2 class="text-4xl lg:text-5xl font-black text-slate-900 mb-6 italic leading-tight uppercase">WIAMI Bluetooth <br><span class="text-green-600">Akıllı Tartı Hediye!</span></h2>
+                    <p class="text-slate-600 mb-8 text-lg">5.000 TL ve üzeri siparişlerinizde gelişiminizi takip etmeniz için akıllı tartınız benden.</p>
+                    <a href="https://instagram.com/guluysall24" target="_blank" class="inline-block bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-black transition uppercase">Bilgi Al</a>
+                </div>
+                <div class="lg:w-2/5 bg-green-600 flex items-center justify-center p-12">
+                     <svg width="200" height="200" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="50" width="300" height="300" rx="40" fill="white" />
+                        <rect x="130" y="80" width="140" height="60" rx="10" fill="#1e293b" />
+                        <text x="200" y="125" font-family="monospace" font-size="34" fill="#10b981" text-anchor="middle" font-weight="bold">65.2</text>
+                        <circle cx="110" cy="200" r="30" fill="#f1f5f9" />
+                        <circle cx="290" cy="200" r="30" fill="#f1f5f9" />
+                        <circle cx="110" cy="300" r="30" fill="#f1f5f9" />
+                        <circle cx="290" cy="300" r="30" fill="#f1f5f9" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="bg-slate-900 text-white py-12 px-4 text-center">
         <h4 class="text-2xl font-bold italic mb-2 uppercase">AYŞEGÜL UYSAL</h4>
         <p class="text-green-500 text-sm font-semibold uppercase mb-8">Herbalife Bağımsız Sağlıklı Yaşam Koçu</p>
         <p class="text-slate-500 text-[10px] tracking-widest uppercase italic">Bu sayfa bir bağımsız distribütör tarafından hazırlanmıştır.</p>
     </footer>
+
+    <script>
+        function calculateBMI() {
+            const h = document.getElementById('height').value / 100;
+            const w = document.getElementById('weight').value;
+            
+            if (h > 0 && w > 0) {
+                const bmi = (w / (h * h)).toFixed(1);
+                const resultBox = document.getElementById('result-box');
+                const bmiVal = document.getElementById('bmi-value');
+                const bmiStatus = document.getElementById('bmi-status');
+                const bmiDesc = document.getElementById('bmi-desc');
+
+                resultBox.classList.remove('hidden');
+                bmiVal.innerText = bmi;
+
+                if (bmi < 18.5) {
+                    bmiStatus.innerText = "Zayıf";
+                    bmiStatus.className = "text-blue-400 font-bold text-xl uppercase mb-4";
+                    bmiDesc.innerText = "Vücut ağırlığınız boyunuza göre az. Birlikte sağlıklı kilo alabiliriz.";
+                } else if (bmi < 25) {
+                    bmiStatus.innerText = "Normal";
+                    bmiStatus.className = "text-green-500 font-bold text-xl uppercase mb-4";
+                    bmiDesc.innerText = "Harika! İdeal kilodasınız. Formunuzu korumak için buradayım.";
+                } else if (bmi < 30) {
+                    bmiStatus.innerText = "Fazla Kilolu";
+                    bmiStatus.className = "text-yellow-500 font-bold text-xl uppercase mb-4";
+                    bmiDesc.innerText = "Hafif bir programla ideal kilonuza kolayca inebiliriz.";
+                } else {
+                    bmiStatus.innerText = "Obez";
+                    bmiStatus.className = "text-red-500 font-bold text-xl uppercase mb-4";
+                    bmiDesc.innerText = "Sağlığın için değişim şart. Senin için en uygun planı hazırlayalım.";
+                }
+                
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
 
 </body>
 </html>
